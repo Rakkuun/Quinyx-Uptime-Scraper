@@ -14,11 +14,12 @@ current_status = soup.find('div', class_='page-status').get_text(strip=True)
 # define no reported issue in a variable
 system_has_no_issues = "All Systems Operational"
 
-# set current time
+# get current time
 now = datetime.now()
 
 # check if current status equals system has no issues & report back
 if current_status == system_has_no_issues:
     print(now, ": SmartRecruiters reports no issues at this time.")
 else:
+    #todo send email via SendGrid if SmartRecruiters has reported issues.
     print(now, ": ALARM: SmartRecruiters has reported issues! Visit http://status.smartrecruiters.com/ for more information.")
