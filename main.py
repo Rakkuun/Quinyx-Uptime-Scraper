@@ -9,6 +9,7 @@ page = requests.get("http://status.smartrecruiters.com/")
 soup = BeautifulSoup(page.content, 'html.parser')
 
 # get current status string from page-status element
+#todo class (class = unresolved-incidents)
 current_status = soup.find('div', class_='page-status').get_text(strip=True)
 
 # define no reported issue in a variable
