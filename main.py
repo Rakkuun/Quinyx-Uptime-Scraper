@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
+from sendmail import send_status_email
 
 # get HTML from SmartRecruiters status page
 page = requests.get("http://status.smartrecruiters.com/")
@@ -22,5 +23,5 @@ now = datetime.now()
 if current_status == system_has_no_issues:
     print(now, ": SmartRecruiters reports no issues at this time.")
 else:
-    #todo send email via SendGrid if SmartRecruiters has reported issues.
+    send_status_email()
     print(now, ": ALARM: SmartRecruiters has reported issues! Visit http://status.smartrecruiters.com/ for more information.")
