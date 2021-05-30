@@ -6,7 +6,7 @@ from sendgrid.helpers.mail import Mail
 def send_status_email():
     message = Mail(
         from_email='sjtenkate@live.nl',
-        to_emails='sander.tenkate@coolblue.nl',
+        to_emails='sjtenkate@live.nl',
         subject='One or more HR Systems report issues',
         html_content='<strong>Check if current HR Systems are operational.</strong>')
     try:
